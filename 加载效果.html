@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=  , initial-scale=1.0">
+    <title>月步式的loading加载动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to top, #1e3c72, #2a5298);
+        }
+
+        .loader {
+            width: 125px;
+            position: relative;
+            perspective: 200px;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            position: absolute;
+            animation: jumping 0.5s ease infinite alternate;
+        }
+
+        .loader::after {
+            right: 0;
+            animation-delay: 0.15s;
+        }
+
+        .loader::before {
+            left: 0;
+        }
+
+        @keyframes jumping {
+            0% {
+                transform: scale(1) translateY(0) rotateX(0);
+                box-shadow: 0 0 0 transparent;
+            }
+
+            100% {
+                transform: scale(1.2) translateY(-55px) rotateX(45deg);
+                background-color: #fff;
+                box-shadow: 0 55px 100px #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+</body>
+
+</html>
