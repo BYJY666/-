@@ -185,7 +185,6 @@ body {
 .container.success .form {
   opacity: 0;
 }
-
 /* 定义动画 */
 @keyframes square {
   0% {
